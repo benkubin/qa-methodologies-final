@@ -6,25 +6,25 @@ public class CanDriveTest
 
     @Test
     void TestMin() {
-        assertThrows(IllegalArgumentException.class, () -> CanDrive.canDrive(Integer.MIN_VALUE));
+        assertFalse(CanDrive.canDrive(Integer.MIN_VALUE));
     }
 
     @Test
     void TestMin1()
     {
-        assertThrows(IllegalArgumentException.class, () -> CanDrive.canDrive(Integer.MIN_VALUE + 1));
+        assertFalse(CanDrive.canDrive(Integer.MIN_VALUE + 1));
     }
 
     @Test
     void TestNeg1()
     {
-        assertThrows(IllegalArgumentException.class, () -> CanDrive.canDrive(-1));
+        assertFalse(CanDrive.canDrive(-1));
     }
 
     @Test
     void Test0 ()
     {
-        assertTrue(CanDrive.canDrive(0));
+        assertFalse(CanDrive.canDrive(0));
     }
 
     @Test
@@ -60,13 +60,13 @@ public class CanDriveTest
     @Test
     void TestMax1()
     {
-        assertThrows(IllegalArgumentException.class, () -> CanDrive.canDrive(Integer.MAX_VALUE - 1));
+        assertTrue(CanDrive.canDrive(Integer.MAX_VALUE - 1));
     }
 
     @Test
     void TestMax()
     {
-        assertThrows(IllegalArgumentException.class, () -> CanDrive.canDrive(Integer.MAX_VALUE));
+        assertTrue(CanDrive.canDrive(Integer.MAX_VALUE));
     }
 
 
