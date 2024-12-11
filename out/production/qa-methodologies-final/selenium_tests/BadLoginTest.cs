@@ -10,7 +10,7 @@ using OpenQA.Selenium.Support.UI;
 namespace SeleniumTests
 {
     [TestClass]
-    public class GoodLoginTest
+    public class BadLoginTest
     {
         private static IWebDriver driver;
         private StringBuilder verificationErrors;
@@ -52,7 +52,7 @@ namespace SeleniumTests
         }
         
         [TestMethod]
-        public void TheGoodLoginTest()
+        public void TheBadLoginTest()
         {
             driver.Navigate().GoToUrl("https://letsusedata.com/index.html");
             driver.FindElement(By.Id("txtUser")).Click();
@@ -60,9 +60,9 @@ namespace SeleniumTests
             driver.FindElement(By.Id("txtUser")).SendKeys("test1");
             driver.FindElement(By.Id("txtPassword")).Click();
             driver.FindElement(By.Id("txtPassword")).Clear();
-            driver.FindElement(By.Id("txtPassword")).SendKeys("Test12456");
+            driver.FindElement(By.Id("txtPassword")).SendKeys("test1234");
             driver.FindElement(By.Id("javascriptLogin")).Click();
-            # Add assertion
+            Assert.IsTrue(IsElementPresent(By.Id("lblMessage")));
         }
         private bool IsElementPresent(By by)
         {

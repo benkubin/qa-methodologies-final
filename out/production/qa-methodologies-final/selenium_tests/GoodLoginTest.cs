@@ -62,7 +62,6 @@ namespace SeleniumTests
             driver.FindElement(By.Id("txtPassword")).Clear();
             driver.FindElement(By.Id("txtPassword")).SendKeys("Test12456");
             driver.FindElement(By.Id("javascriptLogin")).Click();
-            # Add assertion
         }
         private bool IsElementPresent(By by)
         {
